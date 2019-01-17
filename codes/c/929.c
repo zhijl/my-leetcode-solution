@@ -10,8 +10,8 @@ int numUniqueEmails(char** emails_input, int emailsSize) {
   
   for (int i = 0; i < emailsSize; ++i) {
     int email_length = strlen(emails_input[i]);
-    emails[i] = (char*)malloc(email_length * sizeof(char));
-    memcpy(emails[i], emails_input[i], email_length * sizeof(char));
+    emails[i] = (char*)malloc(email_length * sizeof(char) + 1);
+    memcpy(emails[i], emails_input[i], email_length * sizeof(char) + 1);
   }
 
   for (int i = 0; i < emailsSize; ++i) {
