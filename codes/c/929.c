@@ -26,7 +26,7 @@ int numUniqueEmails(char** emails_input, int emailsSize) {
         break;
       }
       if (1 == plus_flag) {
-        emails[i][j] == '.';
+        emails[i][j] = '.';
       }
     }
     for (; j < email_length; ++j) {
@@ -83,7 +83,7 @@ int numUniqueEmails(char** emails_input, int emailsSize) {
 
 int main(int argc, char** argv) {
 
-  char* emails[2] = {"........." ,"."};
+  char* emails[2] = {"2334@foxmailcom" ,"2334+2345@foxmailcom"};
   int ret =  numUniqueEmails(emails, 2);
   printf("%d\n", ret);
 
