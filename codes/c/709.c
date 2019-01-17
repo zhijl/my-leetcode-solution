@@ -10,9 +10,8 @@ char* toLowerCase(char* str) {
   }
   char* dst = (char *)malloc(length * sizeof(char) + 1);
   memcpy(dst, str, length * sizeof(char) + 1);
-  printf("%s\n", dst);
   for (int i = 0; i < length; ++i) {
-    if (dst[i] < 'Z') {
+    if ('A' <= dst[i] && dst[i] <= 'Z') {
       dst[i] = dst[i] - 'A' + 'a';
     }
   }
