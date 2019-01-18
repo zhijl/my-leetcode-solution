@@ -10,8 +10,13 @@ int repeatedNTimes(int* A, int ASize) {
   if (ASize <= 2) {
     return A[0];
   }
-  for (int i = 3; i < ASize; ++i) {
-    if (A[i] == A[i-1] || A[i] == A[i-2] || A[i] == A[i-3]) {
+  if (ASize == 4) {
+    if (A[3] == A[0]) {
+      return A[0];
+    }
+  }
+  for (int i = 2; i < ASize; ++i) {
+    if (A[i] == A[i-1] || A[i] == A[i-2]) {
       return A[i];
     }
   }
