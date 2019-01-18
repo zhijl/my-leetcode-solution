@@ -15,6 +15,7 @@ int repeatedNTimes(int* A, int ASize) {
       return A[i];
     }
   }
+  return 0;
 }
 
 int main() {
