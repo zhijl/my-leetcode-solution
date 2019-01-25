@@ -6,13 +6,12 @@ int** flipAndInvertImage(int** A, int ARowSize, int *AColSizes,
                          int** columnSizes, int* returnSize) {
   int** out_arr = NULL;
   out_arr = (int**)malloc(ARowSize * sizeof(int*));
-  columnSizes = (int**)malloc(ARowSize * sizeof(int*));
+  *columnSizes = (int*)malloc(ARowSize * sizeof(int));
   for (int i = 0; i < ARowSize; ++i) {
     out_arr[i] = (int*)malloc(*AColSizes * sizeof(int));
-    columnSizes[i] = (int*)malloc(sizeof(int));
-    columnSizes[i][0] = *AColSizes;
+    (*columnSizes)[i] = *AColSizes;
     for (int j = 0; j < *AColSizes; ++j) {
-      out_arr[j][j] = !A[i][*AColSizes - j + 1];
+      out_arr[i][j] = !A[i][*AColSizes-j-1];
     }
   }
   *returnSize = ARowSize;
